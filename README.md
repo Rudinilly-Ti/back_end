@@ -1,4 +1,4 @@
-# back_end da aplicação
+# Back_end da aplicação
 
 1 - clone o projeto;
 2 - entre na pasta do projeto e rode o comando yarn i ou npm i;
