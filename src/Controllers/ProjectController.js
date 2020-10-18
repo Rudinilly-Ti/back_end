@@ -3,6 +3,12 @@ const { Bloco } = require('../app/models');
 const { Tarefa } = require('../app/models');
 
 module.exports = {
+  async showOne(req, res) {
+    const { id } = req.params
+    const project = await Projeto.findByPk(id);
+    return res.json(project);
+  },
+
   async index(req,res) {
       const project = await Projeto.findAll();
 

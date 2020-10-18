@@ -2,7 +2,8 @@ const { Tarefa } = require('../app/models');
 
 module.exports = {
   async index(req, res) {
-    const appointment = await Tarefa.findAll();
+    const { uuid_bloco } = req.params;
+    const appointment = await Tarefa.findAll({ where: { uuid_bloco }});
 
     return res.json(appointment)
   },
@@ -43,8 +44,6 @@ module.exports = {
     const { id } = req.params;
 
     const appointment = await Tarefa.update({
-      uuid_projeto,
-      uuid_bloco,
       responsavel, 
       descricao,
       status,

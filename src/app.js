@@ -9,9 +9,9 @@ class AppController{
   constructor() {
     this.express = express();
 
+    this.cors();
     this.middlewares();
     this.routes();
-    this.cors();
   }
 
   middlewares() {
@@ -23,7 +23,8 @@ class AppController{
   }
 
   cors() {
-    this.express.use(cors());
+    this.express.use(cors())
+
   }
 }
 

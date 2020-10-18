@@ -3,7 +3,8 @@ const { Tarefa } = require('../app/models');
 
 module.exports = {
   async index(req, res) {
-    const block = await Bloco.findAll();
+    const { uuid_projeto } = req.params;
+    const block = await Bloco.findAll({ where: { uuid_projeto }});
 
     return res.json(block)
   },
